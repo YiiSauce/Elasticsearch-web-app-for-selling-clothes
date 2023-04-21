@@ -16,6 +16,6 @@ public class UICont {
     @GetMapping("/")
     public String viewHomePage(Model model) throws IOException {
         model.addAttribute("listProductDocuments",elasticSearchQuery.searchAllDocuments());
-        return "index";
+        return "test";
     }
 }
