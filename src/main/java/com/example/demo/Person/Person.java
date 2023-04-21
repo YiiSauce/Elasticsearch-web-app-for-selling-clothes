@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import org.springframework.data.elasticsearch.annotations.Setting;
 
 @Data
-@Document(indexName = Indices.PERSON_INDEX)
+@Document(indexName = "person")
 @Setting(settingPath = "static/settings.json")
 public class Person {
     @Id
