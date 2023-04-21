@@ -1,17 +1,10 @@
-package com.example.demo.service;
+package com.example.demo.Person;
 
-import com.example.demo.document.Person;
-import com.example.demo.document.Product;
-import com.example.demo.helper.Indices;
-import com.example.demo.repository.PersonRepo;
+import com.example.demo.Person.Person;
+import com.example.demo.Person.PersonRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class PersonService {

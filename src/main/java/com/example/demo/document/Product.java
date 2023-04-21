@@ -1,18 +1,14 @@
 package com.example.demo.document;
 
-import com.example.demo.helper.Indices;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
-import org.springframework.data.elasticsearch.annotations.Setting;
 
 
 @Data
-@Document(indexName = Indices.PRODUCT_INDEX)
+@Document(indexName = "product")
 public class Product {
     @Id
     @Field(type = FieldType.Keyword)

@@ -1,6 +1,5 @@
-package com.example.demo.document;
+package com.example.demo.Person;
 
-import com.example.demo.helper.Indices;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;

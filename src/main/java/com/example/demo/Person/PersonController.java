@@ -1,12 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.Person;
 
-import com.example.demo.document.Person;
-import com.example.demo.service.PersonService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/person")
