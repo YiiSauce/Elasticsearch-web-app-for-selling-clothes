@@ -35,8 +35,8 @@ public class ProductController {
     @Autowired
     private ElasticSearchQuery elasticSearchQuery;
     @GetMapping("/searchDocument")
-    public List<Product> searchAllDocument() throws IOException {
+    public ResponseEntity<Object> searchAllDocument() throws IOException {
         List<Product> products = elasticSearchQuery.searchAllDocuments();
-        return (List<Product>) new ResponseEntity<>(products, HttpStatus.OK);
+        return new ResponseEntity<>(products, HttpStatus.OK);
     }
 }
