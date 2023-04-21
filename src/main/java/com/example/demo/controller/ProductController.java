@@ -16,16 +16,16 @@ public class ProductController {
     public ProductController(ProductService service){
         this.service=service;
     }
-//    @PostMapping
-//    public void save(@RequestBody Product p){
-//        service.save(p);
-//    }
-//    @GetMapping("{id}")
-//    public Product findById(@PathVariable Long id){
-//        return service.findById(id);
-//    }
-    @PostMapping("/search")
-    public List<Product> search(@RequestBody final SearchRequestDTO dto) {
-        return service.search(dto);
+    @PostMapping
+    public void save(@RequestBody Product p){
+        service.save(p);
     }
+    @GetMapping("{id}")
+    public Product findById(@PathVariable Long id){
+        return service.findById(id);
+    }
+//    @PostMapping("/search")
+//    public List<Product> search(@RequestBody final SearchRequestDTO dto) {
+//        return service.search(dto);
+//    }
 }
