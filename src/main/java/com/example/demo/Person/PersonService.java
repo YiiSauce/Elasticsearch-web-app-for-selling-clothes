@@ -6,11 +6,14 @@ import com.example.demo.Person.PersonRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonService {
 
-    private PersonRepo repo;
     @Autowired
+    private PersonRepo repo;
+
     public PersonService(PersonRepo repo){
         this.repo=repo;
     }
@@ -20,6 +23,7 @@ public class PersonService {
     public Person findById(Long id){
         return repo.findById(id);
     }
+    public List<Person> getAll(){return repo.findAll();}
 }
 //    private final RestHighLevelClient client;
 //    private static final ObjectMapper MAPPER = new ObjectMapper();

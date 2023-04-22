@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.search;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.*;

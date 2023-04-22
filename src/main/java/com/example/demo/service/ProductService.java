@@ -53,9 +53,9 @@ public class ProductService {
 //        }
 //    }
 
-
-    private ProductRepo repo;
     @Autowired
+    private ProductRepo repo;
+
     public ProductService(ProductRepo repo){
         this.repo=repo;
     }
@@ -65,4 +65,8 @@ public class ProductService {
     public Product findById(Long id){
         return repo.findById(id);
     }
+    public List<Product> getAll(){
+        return repo.findAll();
+    }
+
 }
