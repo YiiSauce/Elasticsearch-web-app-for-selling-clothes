@@ -14,7 +14,7 @@ public class UIContPro {
     private ProductService service;
     @GetMapping("/kiki")
     public String viewHomePage(Model model) throws IOException {
-        model.addAttribute("lista",service.getAll());
+        model.addAttribute("listt",service.getAll());
         return "tach";
     }
 }

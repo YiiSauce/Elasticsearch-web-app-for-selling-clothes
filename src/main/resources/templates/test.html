@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <meta charset="ISO-8859-1">
+  <title>Product Store</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
-<div class="container mt-5 mb-5">
-  <div class="d-flex justify-content-center row">
-    <div class="col-md-10">
+<h1>Herer !!</h1>
 
-
-      <div class="row p-2 bg-white border rounded">
-        <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="STAF.jpg"><a href="STAF.jpg" target="_blank">For More >></a></div>
-        <div class="col-md-6 mt-1">
-          <h5>productName <img src="new.png"></h5><br>
-          <div class="d-flex flex-row">
-            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
-            <div class="ratings mr-4"></div><span><img src="back.png"> 45 Review</span>
-            <div class="ratings mr-4"></div><span><img src="hihi.png"> 45 Like</span>
-          </div>
-          <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
-          <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
-          <label for="quantity"><b>Quantity </b>(between 1 & 5) : </label><input type="number" id="quantity" name="quantity" min="1" max="5"><input type="submit"><br>
-          <span style="font-size: large;font-weight: bold;">Stock:</span> 5476 <i>items</i>
-        </div>
-        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-          <div class="d-flex flex-row align-items-center">
-            <h4 class="mr-1">$13.99 </h4><span class="strike-text">$20.99 </span>&#160&#160&#160<img src="bag.png">
-          </div>
-          <h6 class="text-success">Free shipping</h6>
-          <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Add to Cart</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
-          <br><h6 style="font-size: large;font-weight: bold;color:crimson"><img src="premium-quality.png">Best Product</h6>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<table id="DataTable" class="table table-striped table-dark table-hover table-bordered">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>IMAGE</th>
+    <th>NAME</th>
+    <th>DESCIMGS</th>
+    <th>PRICE</th>
+    <th>RATE</th>
+    <th>LIKES</th>
+    <th>REVIEWS</th>
+    <th>QUANTITY</th>
+    <th>BOOL</th>
+    <th>STOCK</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="elem:${listt}">
+    <td th:text="${elem.}"></td>
+    <td th:text="${elem.mainImg}"></td>
+    <td th:text="${elem.productName}"></td>
+    <td th:text="${elem.descImg}"></td>
+    <td th:text="${elem.price}"></td>
+    <td th:text="${elem.rate}"></td>
+    <td th:text="${elem.likes}"></td>
+    <td th:text="${elem.reviews}"></td>
+    <td th:text="${elem.quantity}"></td>
+    <td>
+      <ol>
+        <li th:text="${elem.cart}"></li>
+        <li th:text="${elem.wishlist}"></li>
+        <li th:text="${elem.bestProduct}"></li>
+        <li th:text="${elem.newProduct}"></li>
+        <li th:text="${elem.recoProduct}"></li>
+        <li th:text="${elem.saleProduct}"></li>
+      </ol>
+    </td>
+    <td th:text="${elem.stock}"></td>
+  </tr>
+  </tbody>
+</table>
+<h1>Herer !!</h1>
 
 </body>
 </html>
