@@ -15,8 +15,7 @@
 <body>
  <div class="container mt-5 mb-5">
       <div class="d-flex justify-content-center row">
-        <div class="col-md-10">
-          <ul th:each="elem:${listt}">
+        <div class="col-md-10" th:each="elem:${listt}">
           <div class="row p-2 bg-white border rounded">
             <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" th:src="@{${elem.mainImg}}"><a th:href="@{${elem.descImg}}" target="_blank">For More >></a></div>
             <div class="col-md-6 mt-1">
@@ -33,14 +32,13 @@
             </div>
             <div class="align-items-center align-content-center col-md-3 border-left mt-1">
               <div class="d-flex flex-row align-items-center">
-                <h4 class="mr-1" th:text="${elem.price}"> $ </h4><div th:with="result=${elem.price + 18}"><span class="strike-text" th:text="${result}"></span></div>&#160&#160&#160<span th:if="${elem.saleProduct == true}"><img src="bag.png"></span>
+                <h4 class="mr-1" th:text="${elem.price}"> $ </h4><div th:with="result=${elem.price + 1218}"><span class="strike-text" th:text="${result}"></span></div>&#160&#160&#160<span th:if="${elem.saleProduct == true}"><img src="bag.png"></span>
               </div>
               <h6 class="text-success">Free shipping</h6>
               <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button" th:text="${elem.cart}"> AddtoCart</button><button class="btn btn-outline-primary btn-sm mt-2" type="button" th:text="${elem.wishlist}"> Addtowishlist</button></div>
               <br><h6 style="font-size: large;font-weight: bold;color:crimson" th:if="${elem.bestProduct == true}"><img src="premium-quality.png">Best Product</h6>
             </div>
           </div>
-          </ul>
         </div>
       </div>
     </div>
