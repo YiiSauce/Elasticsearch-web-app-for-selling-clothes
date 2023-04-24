@@ -14,6 +14,6 @@ public class UICont {
     @GetMapping("/coco")
     public String viewHomePage(Model model) throws IOException {
         model.addAttribute("lista",service.getAll());
-        return "test";
+        return "modif";
     }
 }

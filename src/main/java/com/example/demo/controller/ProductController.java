@@ -17,10 +17,10 @@ public class ProductController {
     public ProductController(ProductService service){
         this.service=service;
     }
-    @PostMapping("/createDocument")
-    public void save(@RequestBody Product p){
-        service.save(p);
-    }
+//    @PostMapping("/createDocument")
+//    public void save(@RequestBody Product p){
+//        service.save(p);
+//    }
 
     @GetMapping("{id}")
     public Product findById(@PathVariable Long id){

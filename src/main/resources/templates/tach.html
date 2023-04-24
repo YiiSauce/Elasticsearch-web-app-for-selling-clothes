@@ -15,6 +15,12 @@
 <body>
  <div class="container mt-5 mb-5">
       <div class="d-flex justify-content-center row">
+        <div class = "row">
+          <div class = "col-lg-3">
+            <a th:href = "@{/kiki/new}" class = "btn btn-primary btn-sm mb-3"> Add Student</a>
+          </div>
+        </div>
+
         <div class="col-md-10" th:each="elem:${listt}">
           <div class="row p-2 bg-white border rounded">
             <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" th:src="@{${elem.mainImg}}"><a th:href="@{${elem.descImg}}" target="_blank">For More >></a></div>
@@ -38,6 +44,14 @@
               <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button" th:text="${elem.cart}"> AddtoCart</button><button class="btn btn-outline-primary btn-sm mt-2" type="button" th:text="${elem.wishlist}"> Addtowishlist</button></div>
               <br><h6 style="font-size: large;font-weight: bold;color:crimson" th:if="${elem.bestProduct == true}"><img src="premium-quality.png">Best Product</h6>
             </div>
+          </div>
+          <div>
+            <a th:href = "@{/kiki/edit/{id}(id=${elem.id})}"
+               class = "btn btn-primary">Update</a>
+
+            <a th:href = "@{/kiki/{id}(id=${elem.id})}"
+               class = "btn btn-danger">Delete</a>
+
           </div>
         </div>
       </div>

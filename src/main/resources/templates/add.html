@@ -6,18 +6,18 @@
 </head>
 
 <body>
-<form action="/products" method="post">
+<form th:action="@{/kiki}" th:object = "${product}" method="post">
   <label for="productId">Product ID:</label>
-  <input type="text" id="productId" name="id"><br><br>
+  <input type="number" id="productId" name="id" th:field = "*{id}"><br><br>
 
   <label for="productName">Product Name:</label>
-  <input type="text" id="productName" name="name"><br><br>
+  <input type="text" id="productName" name="name" th:field = "*{productName}"><br><br>
 
-  <label for="productDescription">Product Description:</label>
-  <textarea id="productDescription" name="description"></textarea><br><br>
+  <label for="quantity">Product Price:</label>
+  <input type="number" id="quantity" name="quantity" th:field = "*{quantity}"><br><br>
 
-  <label for="productPrice">Product Price:</label>
-  <input type="number" id="productPrice" name="price"><br><br>
+  <label for="price">Product Price:</label>
+  <input type="number" id="price" name="price" th:field = "*{price}"><br><br>
 
   <button type="submit">Submit</button>
 </form>

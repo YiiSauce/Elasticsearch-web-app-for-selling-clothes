@@ -5,7 +5,7 @@ import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -18,14 +18,36 @@ public class UIContPro {
         model.addAttribute("listt",service.getAll());
         return "tach";
     }
-    @GetMapping("/createDocument")
-    public String adding(Model model) throws IOException {
+    @PostMapping("/kiki")
+    public String saveStudent(@ModelAttribute("product") Product product) {
+        service.save(product);
+        return "redirect:/kiki ";
+    }
+    @GetMapping("/kiki/new")
+    public String adding(Model model) {
         Product product = new Product();
-        model.addAttribute("productId",compte);
-        model.addAttribute("compte_id",compte);
-        model.addAttribute("listComptes",compteService.getAll());
-        model.addAttribute("profs",professeurService.getAll());
-        model.addAttribute("listt",service.getAll());
+        model.addAttribute("product", product);
         return "add";
+    }
+    @GetMapping("/kiki/edit/{id}")
+    public String editStudentForm(@PathVariable Long id, Model model) {
+        model.addAttribute("student", service.findById(id));
+        return "modif";
+    }
+    @PostMapping("/kiki/{id}")
+    public String updateStudent(@PathVariable Long id,
+                                @ModelAttribute("product") Product product,
+                                Model model) {
+
+        // get student from database by id
+        Product pro = service.findById(id);
+        pro.setId(id);
+        pro.setproductName(product.getproductName());
+        pro.setLastName(product.getLastName());
+        pro.setEmail(product.getEmail());
+
+        // save updated student object
+        service.save(pro);
+        return "redirect:/students";
     }
 }
