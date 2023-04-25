@@ -69,4 +69,8 @@ public class ProductService {
         return repo.findAll();
     }
 
+    public void deleteById(Long id) {
+        repo.deleteById(id);
+    }
+
 }

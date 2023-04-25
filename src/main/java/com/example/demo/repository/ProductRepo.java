@@ -14,4 +14,6 @@ public interface ProductRepo extends ElasticsearchRepository<Product, Long> {
     Product findById(Long id);
 
     List<Product> findAll();
+
+    void deleteById(Long id);
 }

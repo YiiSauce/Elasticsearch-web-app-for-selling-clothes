@@ -30,24 +30,29 @@ public class UIContPro {
         return "add";
     }
     @GetMapping("/kiki/edit/{id}")
-    public String editStudentForm(@PathVariable Long id, Model model) {
-        model.addAttribute("student", service.findById(id));
+    public String editPro(@PathVariable Long id, Model model) {
+        model.addAttribute("product", service.findById(id));
         return "modif";
     }
     @PostMapping("/kiki/{id}")
-    public String updateStudent(@PathVariable Long id,
+    public String update(@PathVariable Long id,
                                 @ModelAttribute("product") Product product,
                                 Model model) {
 
         // get student from database by id
         Product pro = service.findById(id);
         pro.setId(id);
-        pro.setproductName(product.getproductName());
-        pro.setLastName(product.getLastName());
-        pro.setEmail(product.getEmail());
+        pro.setProductName(product.getProductName());
+        pro.setQuantity(product.getQuantity());
+        pro.setPrice(product.getPrice());
 
-        // save updated student object
         service.save(pro);
-        return "redirect:/students";
+        return "redirect:/kiki";
+    }
+
+    @GetMapping("/kiki/{id}")
+    public String deleteStudent(@PathVariable Long id) {
+        service.deleteById(id);
+        return "redirect:/kiki";
     }
 }
