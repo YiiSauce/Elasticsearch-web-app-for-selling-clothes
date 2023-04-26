@@ -42,4 +42,4 @@ public class Config {
     public ElasticsearchOperations elasticsearchTemplate() {
         return new ElasticsearchRestTemplate(client());
     }
-    }
+}
